@@ -1,0 +1,180 @@
+{
+  "name": "warden",
+  "version": "0.0.0",
+  "author": "Mark Stanley Everitt",
+  "main": "index.js",
+  "description": "A wrapper for Panopticon that makes adding measurements to your codebase simple and efficient.",
+  "homepage": "https://github.com/qubyte/warden",
+  "scripts": {
+    "test": "nodeunit test.js",
+    "cover": "istanbul cover nodeunit test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qubyte/warden"
+  },
+  "keywords": [
+    "sampling",
+    "cluster"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qubyte/warden/issues"
+  },
+  "dependencies": {
+    "panopticon": "~0.2.0"
+  },
+  "devDependencies": {
+    "nodeunit": "~0.8.4",
+    "jshint": "~2.4.3",
+    "jscs": "~1.2.4",
+    "istanbul": "~0.2.4"
+  },
+  "jshintConfig": {
+    "bitwise": true,
+    "camelcase": true,
+    "curly": true,
+    "eqeqeq": true,
+    "forin": false,
+    "immed": true,
+    "indent": 4,
+    "latedef": true,
+    "newcap": true,
+    "noarg": true,
+    "noempty": true,
+    "nonew": true,
+    "plusplus": false,
+    "quotmark": "single",
+    "undef": true,
+    "unused": true,
+    "strict": true,
+    "trailing": true,
+    "maxparams": 4,
+    "maxdepth": 3,
+    "maxstatements": 15,
+    "maxcomplexity": 11,
+    "maxlen": 100,
+    "smarttabs": true,
+    "node": true,
+    "browser": true,
+    "esnext": true
+  },
+  "jscsConfig": {
+    "requireCurlyBraces": [
+      "if",
+      "else",
+      "for",
+      "while",
+      "do",
+      "try",
+      "catch",
+      "case",
+      "default"
+    ],
+    "requireSpaceAfterKeywords": [
+      "if",
+      "else",
+      "for",
+      "while",
+      "do",
+      "switch",
+      "return",
+      "try",
+      "catch"
+    ],
+    "requireParenthesesAroundIIFE": true,
+    "requireSpacesInAnonymousFunctionExpression": {
+      "beforeOpeningRoundBrace": true,
+      "beforeOpeningCurlyBrace": true
+    },
+    "requireSpacesInNamedFunctionExpression": {
+      "beforeOpeningCurlyBrace": true
+    },
+    "disallowSpacesInNamedFunctionExpression": {
+      "beforeOpeningRoundBrace": true
+    },
+    "disallowMultipleVarDecl": true,
+    "disallowSpacesInsideArrayBrackets": true,
+    "requireSpacesInsideObjectBrackets": "all",
+    "disallowQuotedKeysInObjects": true,
+    "disallowSpaceAfterObjectKeys": true,
+    "requireCommaBeforeLineBreak": true,
+    "disallowLeftStickedOperators": [
+      "?",
+      "+",
+      "-",
+      "/",
+      "*",
+      "=",
+      "==",
+      "===",
+      "!=",
+      "!==",
+      ">",
+      ">=",
+      "<",
+      "<="
+    ],
+    "disallowRightStickedOperators": [
+      "?",
+      "+",
+      "-",
+      "/",
+      "*",
+      "=",
+      "==",
+      "===",
+      "!=",
+      "!==",
+      ">",
+      ">=",
+      "<",
+      "<="
+    ],
+    "requireLeftStickedOperators": [
+      ","
+    ],
+    "disallowSpaceAfterPrefixUnaryOperators": [
+      "++",
+      "--",
+      "+",
+      "-",
+      "~",
+      "!"
+    ],
+    "disallowSpaceBeforePostfixUnaryOperators": [
+      "++",
+      "--"
+    ],
+    "requireCamelCaseOrUpperCaseIdentifiers": true,
+    "disallowKeywords": [
+      "with"
+    ],
+    "disallowMultipleLineStrings": true,
+    "validateLineBreaks": "LF",
+    "validateQuoteMarks": {
+      "mark": "'",
+      "escape": true
+    },
+    "validateIndentation": "\t",
+    "disallowMixedSpacesAndTabs": "smart",
+    "disallowTrailingWhitespace": true,
+    "disallowKeywordsOnNewLine": [
+      "else",
+      "catch"
+    ],
+    "requireLineFeedAtFileEnd": true,
+    "maximumLineLength": 100,
+    "requireCapitalizedConstructors": true,
+    "safeContextKeyword": "that",
+    "requireDotNotation": true,
+    "validateJSDoc": {
+      "checkParamNames": true,
+      "checkRedundantParams": true,
+      "requireParamTypes": true
+    },
+    "excludeFiles": [
+      "node_modules/**"
+    ]
+  }
+}

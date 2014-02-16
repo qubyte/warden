@@ -33,8 +33,7 @@ Object.defineProperty(exports, 'isSetup', {
 function makeOptions(interval) {
 	'use strict';
 
-	var copiedObject = { interval: interval };
-
+	var copiedObject = {};
 	var keys = Object.keys(specification);
 
 	for (var i = 0, len = keys.length; i < len; i++) {
@@ -42,6 +41,8 @@ function makeOptions(interval) {
 
 		copiedObject[key] = copiedObject[key];
 	}
+
+	copiedObject.interval = interval;
 
 	return copiedObject;
 }

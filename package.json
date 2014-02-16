@@ -22,7 +22,7 @@
     "url": "https://github.com/qubyte/warden/issues"
   },
   "dependencies": {
-    "panopticon": "~0.2.0"
+    "panopticon": "https://github.com/qubyte/panopticon/archive/v1.0.0-alpha.tar.gz"
   },
   "devDependencies": {
     "nodeunit": "~0.8.4",

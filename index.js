@@ -100,34 +100,22 @@ function mapMethod(methodName) {
  * @param {Number[]} [intervals] An array of interval values.
  */
 
-exports.setup = function (spec, intervals) {
+exports.setup = function (intervals, spec) {
 	'use strict';
 
 	// Store the specification.
-	specification = spec;
+	specification = spec || {};
+
+	// Throw if no intervals are given.
+	if (!Array.isArray(intervals) || intervals.length === 0 || !intervals.every(Number.isFinite)) {
+		throw new Error('Warden setup must be given an array of intervals');
+	}
 
 	// Generate an initial set of intervals.
-	if (Array.isArray(intervals)) {
-		panoptica = intervals.map(constructPanopticon);
-	} else {
-		panoptica = [];
-	}
+	panoptica = intervals.map(constructPanopticon);
 
 	// The module has been initialized.
 	isSetup = true;
-};
-
-
-/**
- * After the setup function has been run, new intervals may still be added.
- *
- * @param {Number} interval A time interval for the new Panopticon instance.
- */
-
-exports.add = function (interval) {
-	'use strict';
-
-	panoptica.push(constructPanopticon(interval));
 };
 
 

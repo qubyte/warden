@@ -44,13 +44,50 @@ exports['Warden should have Panopticon built in sampler methods.'] = function (t
 
 
 exports['Warden should have Panopticon extended sampler methods.'] = function (test) {
-	var warden = this.warden;
-
 	/* istanbul ignore next */
-	warden.registerMethod('TestLogger', function () {});
+	this.warden.registerMethod('TestLogger', function () {});
 
 	test.expect(1);
-	test.ok(warden.TestLogger);
+	test.ok(this.warden.TestLogger);
+	test.done();
+};
+
+
+exports['Warden should throw if no intervals are given.'] = function (test) {
+	var warden = this.warden;
+
+	test.throws(function () {
+		warden.setup(null, {});
+	}, Error);
+
+	test.done();
+};
+
+
+exports['Warden should throw if an empty interval array is given.'] = function (test) {
+	var warden = this.warden;
+
+	test.throws(function () {
+		warden.setup([], {});
+	}, Error);
+
+	test.done();
+};
+
+
+exports['Warden should throw if non numeric intervals are given.'] = function (test) {
+	var warden = this.warden;
+
+	test.throws(function () {
+		warden.setup([1, 2, null, 4 ,5], {});
+	}, Error);
+
+	test.done();
+};
+
+
+exports['Warden should assume an empty object if no spec is given.'] = function (test) {
+	this.warden.setup([1, 2, 3]);
 	test.done();
 };
 
@@ -58,20 +95,7 @@ exports['Warden should have Panopticon extended sampler methods.'] = function (t
 exports['Warden should initialize Panopticon instances.'] = function (test) {
 	test.expect(1);
 
-	this.warden.setup({}, [10]);
-
-	this.warden.on('delivery', function (data) {
-		test.ok(data);
-		test.done();
-	});
-};
-
-
-exports['Warden should accept addition of new intervals after setup.'] = function (test) {
-	test.expect(1);
-
-	this.warden.setup({ startTime: Date.now() });
-	this.warden.add(100);
+	this.warden.setup([100], { startTime: Date.now() });
 	this.warden.inc([], 'test', 100);
 
 	this.warden.on('delivery', function (delivery) {

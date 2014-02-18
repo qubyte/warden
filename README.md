@@ -11,7 +11,7 @@ var cluster = require('cluster');
 var warden = require('warden');
 
 // Calling setup before cluster logic is an easy way to call it on all processes.
-warden.setup({ /* Panopticon config */ }, [1000, 5000, 10000]);
+warden.setup([/* intervals */], { /* Panopticon config */ });
 
 // warden.setup should be run on all processes. Below is how I handle cluster.
 if (cluster.isMaster && process.env.NODE_ENV === 'production') {

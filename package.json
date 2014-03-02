@@ -1,6 +1,6 @@
 {
   "name": "warden",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Mark Stanley Everitt",
   "main": "index.js",
   "description": "A wrapper for Panopticon that makes adding measurements to your codebase simple and efficient.",

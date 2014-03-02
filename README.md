@@ -2,6 +2,8 @@
 
 A wrapper for [Panopticon](https://github.com/Wizcorp/panopticon) that makes adding measurements to your codebase simple and efficient.
 
+Panopticon already makes it easy to sample data and aggregate it over a Node.js cluster. What warden adds is the ability to use `require('warden')` to gain access to one or more Panopticon instances anywhere in your project. No need to roll your own module to contain panoptica and use awkward path-like `requires`'s to use it.
+
 ## Setup
 
 You should require warden and call it on both the cluster master and cluster workers of your service. For example:
@@ -21,7 +23,7 @@ if (cluster.isMaster && process.env.NODE_ENV === 'production') {
 }
 ```
 
-The configuration argument is the same as that of Panopticon, but you should omit the `interval` field since this is overridden by the second argument.
+The configuration argument is the same as that of Panopticon, but you should omit the `interval` field since this is overridden by the intervals argument. It turns out to be useful to have more than one instance of Panopticon with different intervals.
 
 ## Usage
 

@@ -79,7 +79,7 @@ exports['Warden should throw if non numeric intervals are given.'] = function (t
 	var warden = this.warden;
 
 	test.throws(function () {
-		warden.setup([1, 2, null, 4 ,5], {});
+		warden.setup([1, 2, null, 4, 5], {});
 	}, Error);
 
 	test.done();
@@ -108,7 +108,7 @@ exports['Warden should initialize Panopticon instances.'] = function (test) {
 exports['Warden should emit an error if setup not run yet.'] = function (test) {
 	test.expect(1);
 
-	this.warden.on('error' , function (error) {
+	this.warden.on('error', function (error) {
 		test.equal(error.message, 'Warden setup must be run before it receives data.');
 		test.done();
 	});

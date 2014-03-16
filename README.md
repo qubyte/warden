@@ -1,5 +1,10 @@
 # warden
 
+[![Coverage Status](http://img.shields.io/coveralls/qubyte/warden.svg)](https://coveralls.io/r/qubyte/warden?branch=master)
+[![Code Climate](http://img.shields.io/codeclimate/github/qubyte/warden.svg)](https://codeclimate.com/github/qubyte/warden)
+[![Build Status](http://img.shields.io/travis/qubyte/warden/master.svg)](https://travis-ci.org/qubyte/warden)
+[![David](https://david-dm.org/qubyte/warden.svg?theme=shields.io)](https://david-dm.org/qubyte/warden)
+
 A wrapper for [Panopticon](https://github.com/Wizcorp/panopticon) that makes adding measurements to your codebase simple and efficient.
 
 Panopticon already makes it easy to sample data and aggregate it over a Node.js cluster. What warden adds is the ability to use `require('warden')` to gain access to one or more Panopticon instances anywhere in your project. No need to roll your own module to contain panoptica and use awkward path-like `requires`'s to use it.

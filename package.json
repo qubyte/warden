@@ -6,7 +6,7 @@
   "description": "A wrapper for Panopticon that makes adding measurements to your codebase simple and efficient.",
   "homepage": "https://github.com/qubyte/warden",
   "scripts": {
-    "test": "jshint *.js && jscs *.js && nodeunit test.js",
+    "test": "jshint *.js && jscs *.js && nodeunit test",
     "coveralls": "istanbul cover nodeunit test && cat ./coverage/lcov.info | coveralls --verbose"
   },
   "repository": {

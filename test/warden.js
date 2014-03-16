@@ -1,5 +1,6 @@
 'use strict';
 var Panopticon = require('panopticon');
+var wardenPath = require.resolve('../lib/warden');
 
 /**
  * Setup requires a fresh warden.
@@ -7,7 +8,7 @@ var Panopticon = require('panopticon');
  * @param  {Function} callback Callback function.
  */
 exports.setUp = function (callback) {
-	this.warden = require('./');
+	this.warden = require(wardenPath);
 	callback();
 };
 
@@ -24,7 +25,7 @@ exports.tearDown = function (callback) {
 		this.warden.stop();
 	}
 
-	delete require.cache[require.resolve('./')];
+	delete require.cache[wardenPath];
 	callback();
 };
 
